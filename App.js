@@ -1,19 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import {Contador} from './components/Contador'
-import { List } from './components/List';
 import {bootstrap} from 'react-bootstrap'
-
+import {useFonts} from 'expo-font';
+import AppLoading from 'expo-app-loading';
+import Navigator from './src/components/Navigator';
+import { List } from './src/components/List';
 
 export default function App() {
+
+  
   return (
-    <View style={styles.container}>
-       {/*<Contador/>*/} 
-        <List/>
-    <StatusBar style="auto" />
-    </View>
-  );
+
+<List/>  );
 }
 
 const styles = StyleSheet.create({

@@ -1,8 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from 'react';
-import { Modal } from "react-bootstrap";
+import { Modal,bootstrap } from "react-bootstrap";
 import { StyleSheet,Text,View,TextInput,Button,FlatList } from "react-native";
-import {bootstrap} from 'react-bootstrap'
+
 export const List = ()=> {
 
     const [list,setList]=useState([])
@@ -16,7 +16,7 @@ export const List = ()=> {
     
     const onHandlerModal= (item) => {
         setItemSelected(item)
-        setModalVisible(false)
+        setModalVisible(true)
     }
     const onDelete= (id) => {
         setList(list.filter(item=>item.id!=id))
