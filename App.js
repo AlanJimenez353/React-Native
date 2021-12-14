@@ -1,18 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Modal, Alert } from 'react-native';
 import {bootstrap} from 'react-bootstrap'
 import {useFonts} from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import Navigator from './src/components/Navigator';
 import { List } from './src/components/List';
+import Home from './src/components/screens/Home';
 
 export default function App() {
 
-  
-  return (
+  //Carga de fuentes
+  const [loaded]=useFonts({
+    OpenSansBold:require('./assets/fonts/OpenSans-Bold.ttf'),
+    OpenSansLight:require('./assets/fonts/OpenSans-Light.ttf'),
+  });
 
-<List/>  );
+  if(!loaded) return <AppLoading/>
+
+
+  return (
+<View style={styles.container}>
+<Home/>  
+</View>);
 }
 
 const styles = StyleSheet.create({
