@@ -30,7 +30,7 @@ export const List = ()=> {
                    onRequestClose ={ () => setModalVisible(false)}>
                 <View style={styles.containerModal}>
                     <View style={styles.infoContainer}>
-                        <Text>Estas seguro que deseas borrar {itemSelected.value}?</Text>
+                        <Text style={{color:'white'}}>Estas seguro que deseas borrar {itemSelected.value}?</Text>
                         <View style={styles.containerButton}>
                             <Button style={styles.button} title='no' onPress={ () => setModalVisible(false)}></Button>
                             <Button style={styles.button} title='si' onPress={ () => onDelete(itemSelected.id)}></Button>
@@ -38,7 +38,9 @@ export const List = ()=> {
                     </View>
                 </View>
             </Modal>
-            <Text style={styles.textConteiner}>Tus Toppics </Text>
+            <View style={styles.header}>
+            <Text style={{fontSize:40, paddingLeft:70,color:'white'}}>Lista Toppics </Text>
+             </View>   
                 <View style={styles.containerInput}>
                     <TextInput placeholder="Escriba aqui" onChangeText={(text)=> setTextInput(text)} style={styles.input}/>
                     <Button title="Guardar" onPress={()=> onAdd()}/>
@@ -64,8 +66,8 @@ export const List = ()=> {
 }
 const styles= StyleSheet.create({
     containerr: {
-         height:'60%',
-         width:'80%',
+         height:'100%',
+         width:'100%',
          marginTop:20,
          borderRadius:20,
          alignItems:'center',
@@ -86,34 +88,46 @@ const styles= StyleSheet.create({
     containerInput:{
         flexDirection:"row",
         width:"100%",
-        height:"10%",
+        height:"5%",
         marginTop:"3%",
         justifyContent:"space-around",
-        alignItems:"center"
-        
-        
+        alignItems:"center",
+        marginBottom:10
     },
+    header:{
+        flex:1,
+        flexDirection:'row',
+        backgroundColor:'#000b30',
+        maxHeight:100,
+        width:"100%",
+        alignItems:'center',
+        borderBottomColor: '3px solid rgb(0, 221, 221)',
+        borderBottomWidth: 2,
+        marginBottom:10
+        
+     },
     input:{
         borderColor:"black",
-        borderBottomWidth:5,
+        borderWidth:4,
         width:"70%",
         backgroundColor:'white',
         borderRadius:10,
         height:'98%',
        // placeholderTextColor:'black',
         shadowColor:'black',
-        borderColor:'black'        
-
+        borderColor:'black',
     },
     containerItem:{
         flexDirection:'row',
-        width:"90%",
+        width:"77%",
+        padding:10,
+        marginLeft:5,
         justifyContent:"space-between",
-        alignItems:"flex-end",
+        alignItems:"center",
         flexDirection:"row",
         marginVertical:"3%",
-        paddingLeft:100,
-        paddingTop:20
+        borderColor:'black',
+        borderWidth:4,        
         
     },
     containerModal:{
@@ -124,7 +138,9 @@ const styles= StyleSheet.create({
         justifyContent:'center'
     },
     infoContainer:{
-        backgroundColor: "white",
+        backgroundColor: "black",
+        borderColor:'3px solid rgb(0, 221, 221)',
+        borderWidth:4,
         width:'60%',
         height:'25%',
         borderRadius: 10,
@@ -133,9 +149,12 @@ const styles= StyleSheet.create({
     },
     containerButton: {
         flexDirection:'row',
-        width:300,
-        justifyContent:'space-around'    },
-        button:{
+        width:"70%",
+        justifyContent:'space-between',
+        padding:20,
+        borderWidth:5,
+    },
+    button:{
             width:'0%',
             height:'20%',
             backgroundColor:'black'

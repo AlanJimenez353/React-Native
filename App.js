@@ -20,9 +20,8 @@ export default function App() {
 
 
   return (
-<View style={styles.container}>
-<Home/>  
-</View>);
+    <List/>  
+  )
 }
 
 const styles = StyleSheet.create({
