@@ -1,13 +1,18 @@
-import{Text,View,StyleSheet} from 'react-native'
+import{Text,View,StyleSheet,Button} from 'react-native'
 import React from 'react';
 import { Image } from 'react-native-elements';
-const Home= () =>{
+import Navigator from '../Navigator';
+import { List } from '../List';
+
+const Home= ({navigation}) =>{
     
 
     return(
         <View style={styles.screen}>
             
-            <View style={styles.header}><Text style={{fontSize:40, paddingLeft:70,color:'white'}}>Home Screen</Text></View>
+            <View style={styles.header}>
+                <Button title="List" onPress={()=>navigation.navigate("List")}></Button>
+                <Text style={{fontSize:40, paddingLeft:70,color:'white'}}>Home Screen</Text></View>
             <View style={styles.container}>
                 <View style={[styles.box, { backgroundColor: "#3c3938" }]}> 
                     <Image  source={require('./imgs/music.png')}  style={{ width: "80%", height: "80%",borderRadius:20 ,borderColor: '3px solid rgb(0, 221, 221)',borderWidth:3

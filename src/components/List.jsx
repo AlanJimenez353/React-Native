@@ -1,9 +1,11 @@
+import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from 'react';
 import {bootstrap } from "react-bootstrap";
 import { StyleSheet,Text,View,TextInput,Button,FlatList,Modal } from "react-native";
+import Home from "./screens/Home";
 
-export const List = ()=> {
+export const List = ({navigation})=> {
 
     const [list,setList]=useState([])
     const [textImput,setTextInput]= useState("")
@@ -39,7 +41,8 @@ export const List = ()=> {
                 </View>
             </Modal>
             <View style={styles.header}>
-            <Text style={{fontSize:40, paddingLeft:70,color:'white'}}>Lista Toppics </Text>
+                <Button title="Home" onPress={()=>navigation.navigate("home")} style={{}}></Button>
+                <Text style={{fontSize:40, paddingLeft:70,color:'white'}}>Lista Toppics </Text>
              </View>   
                 <View style={styles.containerInput}>
                     <TextInput placeholder="Escriba aqui" onChangeText={(text)=> setTextInput(text)} style={styles.input}/>
