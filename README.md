@@ -20,11 +20,16 @@
 
 ## Capturas:
 
-![Screenshot1](assets/imgs/HomeView.jpeg)
+![Screenshot1](imagenes/HomeView.jpeg)
 > Home View
 ## --
-![Screenshot2](assets/imgs/chat.png)
+![Screenshot2](imagenes/chat.png)
 > Chat View
 ## --
-![Screenshot3](assets/imgs/SingIn(1).png)
+![Screenshot3](imagenes/SingIn(1).png)
 > Register View
+
+
+## Proximas features:
+-TimeStamp a los comentarios 
+-Like a comentarios
